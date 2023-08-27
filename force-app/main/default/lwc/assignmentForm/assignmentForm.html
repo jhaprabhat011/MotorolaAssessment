@@ -1,0 +1,23 @@
+<template>
+    <template if:false={isValid}>
+        <p class="slds-text-color_error"> Please enter required field.</p>
+    </template>
+    <lightning-card title="Assignment Form">
+        <div class="slds-p-around_medium">
+       <lightning-input name="Title" label="Title" value={title} onchange={handleChange} required=true></lightning-input>
+        <lightning-input name="Description" label="Description" value={description} onchange={handleChange} required=true></lightning-input>
+        <lightning-input name="Due Date" label="Due Date" type="date" value={dueDate} onchange={handleChange} required=true></lightning-input>
+        <lightning-combobox
+            name="Status"
+            label="Status"
+            value={status}
+            placeholder="Select Status"
+            options={options}
+            onchange={handleChange}
+            required = true
+        ></lightning-combobox>
+        <div class="slds-p-top_small"></div>
+        <lightning-button label="Save"  variant="brand" onclick={handleSave}></lightning-button>      
+        </div>  
+    </lightning-card>
+</template>
